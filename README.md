@@ -1,6 +1,6 @@
 # IDEA StatiCa RHS base-plate sensitivity
 
-Sample app that integrates VIKTOR with IDEA StatiCa Connection. It analyses an RHS base plate from a reusable [IDEA StatiCa template](templates/rhs_eurocode_parametric_sensitivity.ideaCon), sweeps multiple Developer parameters, and returns a detailed check hierarchy for every combination.
+Sample app that integrates VIKTOR with IDEA StatiCa Connection. It analyses an RHS base plate from a reusable [IDEA StatiCa template](app/templates/rhs_eurocode_parametric_sensitivity.ideaCon), sweeps multiple Developer parameters, and returns a detailed check hierarchy for every combination.
 
 The current example sweeps base-plate thickness (`bp_t`) and anchor embedment (`anchor_embed`), while applying the entered axial force `N` and moments `My` and `Mz` to every case. It also displays the model as an IFC file in VIKTOR's **Template IFC** view.
 
@@ -43,8 +43,8 @@ Verify that both parameter names appear in the **Parameter** column. Then use **
 Open that `.contemp` template in IDEA StatiCa and save a project copy as `.ideaCon`. Store both the project and its matching IFC in the template folder:
 
 ```text
-templates/rhs_eurocode_parametric_sensitivity.ideaCon
-templates/rhs_eurocode_parametric_sensitivity.ifc
+app/templates/rhs_eurocode_parametric_sensitivity.ideaCon
+app/templates/rhs_eurocode_parametric_sensitivity.ifc
 ```
 
 The public REST API can update existing Developer parameters, but it cannot create those Developer links or author individual plates, bolts, and welds. See the [IDEA StatiCa Connection API concepts](https://developer.ideastatica.com/docs/api/connection-api/connection_api_concepts.html).
@@ -61,7 +61,7 @@ For this computer, the selected executable is:
 C:\Users\aleja\AppData\Local\Programs\Python\Python312\python.exe
 ```
 
-`run_idea_statica_sweep.py` is the file the VIKTOR app submits to that worker automatically; do not select it in VIKTOR Desktop. Install the worker dependencies into the exact Python environment chosen above:
+`app/run_idea_statica.py` is the file the VIKTOR app submits to that worker automatically; do not select it in VIKTOR Desktop. Install the worker dependencies into the exact Python environment chosen above:
 
 ```powershell
 & "C:\Users\aleja\AppData\Local\Programs\Python\Python312\python.exe" -m pip install -r worker-requirements.txt
@@ -94,7 +94,7 @@ Do not run `create-app` again for an already registered app.
 
 ## IDEA StatiCa version and REST port
 
-The worker deliberately has the IDEA StatiCa install path and API URL visible near the start of [run_idea_statica_sweep.py](run_idea_statica_sweep.py):
+The worker deliberately has the IDEA StatiCa install path and API URL visible near the start of [app/run_idea_statica.py](app/run_idea_statica.py):
 
 ```python
 idea_install = Path(r"C:\Program Files\IDEA StatiCa\StatiCa 26.0")

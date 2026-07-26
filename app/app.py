@@ -18,7 +18,7 @@ TEMPLATES = APP_ROOT / "templates"
 IFC_TEMPLATE = TEMPLATES / "rhs_eurocode_parametric_sensitivity.ifc"
 # This IDEA project exposes the Developer links bp_t and anchor_embed.
 SENSITIVITY_TEMPLATE = TEMPLATES / "rhs_eurocode_parametric_sensitivity.ideaCon"
-WORKER_SCRIPT = APP_ROOT / "run_idea_statica_sweep.py"
+WORKER_SCRIPT = APP_ROOT / "run_idea_statica.py"
 MAX_CASES = 24
 
 
@@ -207,7 +207,7 @@ class Controller(vkt.Controller):
             raise vkt.UserError(
                 "The sensitivity project is missing. In IDEA StatiCa, open "
                 "rhs_eurocode_parametric_expanded.contemp and save a project copy as "
-                "templates/rhs_eurocode_parametric_sensitivity.ideaCon."
+                "app/templates/rhs_eurocode_parametric_sensitivity.ideaCon."
             )
 
         study_input = {

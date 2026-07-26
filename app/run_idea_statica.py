@@ -126,7 +126,7 @@ def extract_steel_summary_checks(checks: list[dict]) -> list[dict[str, object]]:
     return result
 
 
-def run_idea_statica_sweep() -> None:
+def run_idea_statica() -> None:
     """Calculate all requested Developer-parameter pairs and write one JSON table."""
     idea_install = Path(r"C:\Program Files\IDEA StatiCa\StatiCa 26.0")
     idea_api_url = "http://127.0.0.1:5193"
@@ -303,4 +303,4 @@ def run_idea_statica_sweep() -> None:
 
 
 if __name__ == "__main__":
-    run_idea_statica_sweep()
+    run_idea_statica()
