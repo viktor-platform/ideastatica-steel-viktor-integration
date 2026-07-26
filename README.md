@@ -53,16 +53,10 @@ Install and sign in to [VIKTOR Desktop](https://docs.viktor.ai/docs/create-apps/
 
 ![VIKTOR Desktop Python worker configuration](assets/viktor-worker.png)
 
-Select a 64-bit Python 3.12 executable. To find a registered Python installation on Windows, run:
+Select the Python environment that will run the worker. `app/run_idea_statica.py` is submitted by the VIKTOR app automatically, so do not select that script in VIKTOR Desktop. Install the worker requirements in the same Python environment selected for the worker:
 
 ```powershell
-py -3.12 -c "import sys; print(sys.executable)"
-```
-
-Copy the printed path into VIKTOR Desktop. `app/run_idea_statica.py` is the file the VIKTOR app submits to that worker automatically; do not select it in VIKTOR Desktop. Install the worker dependencies into that exact Python environment:
-
-```powershell
-& "<PATH_TO_PYTHON>" -m pip install -r worker-requirements.txt
+python -m pip install -r worker-requirements.txt
 ```
 
 VIKTOR Desktop starts, stops, and shows logs for the worker. IDEA StatiCa and its license must be installed on the same Windows machine as the worker. See the [official VIKTOR Desktop guide](https://docs.viktor.ai/docs/create-apps/software-integrations/viktor-desktop/).
@@ -72,7 +66,7 @@ VIKTOR Desktop starts, stops, and shows logs for the worker. IDEA StatiCa and it
 Install and configure the VIKTOR CLI. If the VIKTOR platform app has not yet been created, register it once with the same name as `viktor.config.toml`:
 
 ```powershell
-viktor-cli create-app "IDEA StatiCa RHS Sensitivity" --registered-name idea-statica-rhs-sensitivity
+viktor-cli create-app "idea-statica-rhs-sensitivity" --registered-name idea-statica-rhs-sensitivity
 ```
 
 From this repository, perform the first clean local installation and launch:
