@@ -53,16 +53,16 @@ Install and sign in to [VIKTOR Desktop](https://docs.viktor.ai/docs/create-apps/
 
 ![VIKTOR Desktop Python worker configuration](assets/viktor-worker.png)
 
-For this computer, the selected executable is:
-
-```text
-C:\Users\aleja\AppData\Local\Programs\Python\Python312\python.exe
-```
-
-`app/run_idea_statica.py` is the file the VIKTOR app submits to that worker automatically; do not select it in VIKTOR Desktop. Install the worker dependencies into the exact Python environment chosen above:
+Select a 64-bit Python 3.12 executable. To find a registered Python installation on Windows, run:
 
 ```powershell
-& "C:\Users\aleja\AppData\Local\Programs\Python\Python312\python.exe" -m pip install -r worker-requirements.txt
+py -3.12 -c "import sys; print(sys.executable)"
+```
+
+Copy the printed path into VIKTOR Desktop. `app/run_idea_statica.py` is the file the VIKTOR app submits to that worker automatically; do not select it in VIKTOR Desktop. Install the worker dependencies into that exact Python environment:
+
+```powershell
+& "<PATH_TO_PYTHON>" -m pip install -r worker-requirements.txt
 ```
 
 VIKTOR Desktop starts, stops, and shows logs for the worker. IDEA StatiCa and its license must be installed on the same Windows machine as the worker. See the [official VIKTOR Desktop guide](https://docs.viktor.ai/docs/create-apps/software-integrations/viktor-desktop/).
