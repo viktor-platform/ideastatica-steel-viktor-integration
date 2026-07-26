@@ -1,0 +1,7 @@
+app_type = "simple"
+python_version = "3.12"
+registered_name = "idea-statica-rhs-sensitivity"
+
+worker_integrations = [
+    "python",
+]
