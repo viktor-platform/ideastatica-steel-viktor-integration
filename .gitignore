@@ -1,0 +1,43 @@
+# Python environments, bytecode, and test artefacts
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Local VIKTOR state and calculation output
+.viktor/
+runs/
+artifacts/
+*.log
+
+# Local IDEA StatiCa source files and automatic backups
+inputs/
+*.ideaCon.Archiv
+*.ideaCon.backup
+
+# Developer-only generation scripts
+tools/
+src/
+
+# Unused local uv project files (VIKTOR manages the app environment)
+pyproject.toml
+uv.lock
+uv.toml
+
+# Editor and operating-system files
+.vscode/
+.idea/
+*.swp
+*.swo
+Thumbs.db
+.DS_Store
