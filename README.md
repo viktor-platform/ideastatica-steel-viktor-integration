@@ -38,8 +38,6 @@ Verify that both parameter names appear in the **Parameter** column. Then use **
 
 ![Verify the parameter links](assets/03-verify-model-link.png)
 
-![Save the Connection template](assets/04-save-template.jpg)
-
 Open that `.contemp` template in IDEA StatiCa and save a project copy as `.ideaCon`. Store both the project and its matching IFC in the template folder:
 
 ```text
