@@ -8,7 +8,7 @@ import viktor as vkt
 from munch import munchify
 from viktor.testing import mock_View
 
-import app
+import app.app as app
 
 
 class CapturingPythonAnalysis:
@@ -112,7 +112,7 @@ class TestSweepInput(unittest.TestCase):
                 "minor_moment_knm": -12,
             }
         )
-        with mock.patch("app.PythonAnalysis", CapturingPythonAnalysis):
+        with mock.patch("app.app.PythonAnalysis", CapturingPythonAnalysis):
             result = app.Controller().show_anchor_and_concrete_checks(params=params)
 
         self.assertIsInstance(result, vkt.DataResult)
